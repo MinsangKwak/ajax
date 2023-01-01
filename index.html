@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+
+<body>
+    <h2>AJAX</h2>
+    <script>
+        fetch('https://codingapple1.github.io/price.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('400 아니면 500 에러남')
+                }
+                return response.json();
+            })
+            .then((result) => {
+                console.log(result);
+            })
+            .catch(() => {
+                console.log('에러남');
+            });
+
+
+    </script>
+</body>
+
+</html>
